@@ -9,6 +9,11 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Maths paper marked"
+                new Promise(resolve => {
+                    setTimeout(()=>{
+                        resolve('Maths paper marked')
+                    }, 2000)
+                })
             }
         },
         {
@@ -17,6 +22,11 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Geology paper marked"
+                new Promise(resolve => {
+                    setTimeout(()=>{
+                        resolve('Geology paper marked')
+                    }, 2000)
+                })
             }
         },
         {
@@ -25,6 +35,11 @@ describe('06', () => {
             markPaper: () => {
                 // add a promise here that resolves after 2 seconds
                 // and print "Social Studies paper marked"
+                new Promise(resolve => {
+                    setTimeout(()=>{
+                        resolve('Social Studies paper marked')
+                    }, 2000)
+                })
             }
         },
     ]
@@ -33,6 +48,11 @@ describe('06', () => {
         const spyOnLog = vi.spyOn(console, 'log');
 
         // Your code here
+        for await(let i of listOfPapers){
+            if(i.wasSubmitted === true){
+                return i.markPaper()
+            }
+        }
 
 
         expect(spyOnLog).toHaveBeenCalledWith("Maths paper marked");

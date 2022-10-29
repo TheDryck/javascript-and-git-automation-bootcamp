@@ -3,6 +3,13 @@ describe('03', () => {
 
         function isSix(x, y) {
             // Your code here
+            if(x==6 || y==6 || x+y==6 || Math.abs(x-y)==6){
+                return true
+            }
+            else{
+                return false
+            }
+
 
         }
 

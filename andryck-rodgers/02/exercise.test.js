@@ -8,6 +8,13 @@ describe('02', () => {
 
         function lastThree(str) {
             // Your code here
+            if (str.length >= 3) {
+                let last = str.substring(str.length-3)
+                return last + str + last
+            }
+            else{
+                return false
+            }
 
         }
 

@@ -3,6 +3,12 @@ describe('04', () => {
 
         const arrayIncludes5Or2 = (array) => {
             // Your code here
+            for(let i = 0; i < array.length; i++){
+                if(array[i]==2 || array[i]==5){
+                    return true
+                }
+            }
+            return false
 
         }
 
